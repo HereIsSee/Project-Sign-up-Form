@@ -14,18 +14,16 @@ html, body {
 
 .container {
     display: flex;
-    width: 100vw; 
+    flex-direction: column;
+    width: 100vw;
     height: 100vh;
 }
 
-
-.left, .right {
-    height: 100vh;
-}
 
 .left {
+    height: 100px;
+    width: 100%;
     position: relative;
-    flex: 1;
     background-color: azure;
     background-image: url(./images/left_side_background.jpeg);
     background-size: cover; 
@@ -46,12 +44,14 @@ html, body {
 
 #banner {
     position: absolute;
-    top: 40%;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
+    
 
     font-family: 'NorseBold', sans-serif;
-    font-size: 60px;
+    font-size: 30px;
     color: white;
 
 
@@ -62,45 +62,56 @@ html, body {
     display: flex; 
     justify-content: center;
     align-items: center;
+
+    width: 100%; /* Full width */
 }
 
 #banner img {
-    height: 2em;
-    margin: 10px;
+    height: 1.5em; /* Adjusted for mobile */
+    margin-right: 10px;
 }
 
 .form {
     padding: 10px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+
     background-color: rgb(226, 206, 178);
     gap: 10px;
+    font-size: 14px;
+
+    font-family: sans-serif;
+
+    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    /* border-radius: 8px; */
 }
 
 .client_name, .contact_info, .password {
+    position:relative;
     display: flex;
-    gap: 10px;
     margin-bottom: 20px;
 }
 
 .item{
     display: flex;
     flex-direction: column;
-    gap: 1px;
+    margin-right: 2%;
 }
 
-#myform{
-    
+.encouragement {
+    font-weight: bolder;
+    font-size: 18;
 }
 
 .random_text{
     margin-left: 3%;
-    font-size: 24px;
+    font-size: 18px;
     margin-bottom: 10px;
 }
 
 .right > div:first-child {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 button{
@@ -116,6 +127,107 @@ button:hover {
     background-color: rgb(109, 84, 49); 
 }
 
-@media only screen and (min-width: 700px) { 
-    
+.login-prompt, button {
+    margin-left: 3%;
 }
+
+input {
+    background-color: rgb(252, 239, 220);
+    width: 200px;
+    height: 1.5em;
+    border-radius: 3px;
+    border-width: 1px;
+    border-color: lightgray; /* Default border color */
+}
+
+/* Only show validation styles when the input is focused */
+input:invalid {
+    border-color: red; /* Red border when invalid and focused */
+}
+
+input:valid {
+    border-color: green; /* Green border when valid and focused */
+}
+
+
+a {
+    text-decoration: none;
+    color: rgb(83, 64, 36);
+}
+
+
+
+
+@media only screen and (min-width: 760px) { 
+    .container {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    
+    .left, .right {
+        height: 100vh;
+    }
+    
+    .left {
+        min-width: 300px;
+        flex: 1;
+    }
+    
+    
+    #banner {
+        top: 30%;
+        left: 0%;
+        transform: translate(0%, -50%);
+        width: 100%;
+        min-width: 290px;
+        font-size: 60px;
+
+    }
+    
+    #banner img {
+        height: 2em;
+        margin: 10px;
+    }
+    
+    .form {
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(226, 206, 178);
+        gap: 10px;
+
+        align-items: flex-start;
+    }
+    
+    .encouragement {
+        font-size: 26px;
+    }
+
+    .client_name, .contact_info, .password {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .item{
+        font-size: 18px;
+    }
+    
+    
+    .random_text{
+        margin-left: 3%;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    
+    .right > div:first-child {
+        margin-bottom: 20px;
+    }
+
+    input {
+        width: 200px;
+        height: 2em;
+    }
+}
+
