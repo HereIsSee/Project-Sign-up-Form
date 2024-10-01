@@ -1,0 +1,121 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+@font-face {
+    font-family: 'NorseBold';
+    src: url('Norse-Bold.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.container {
+    display: flex;
+    width: 100vw; 
+    height: 100vh;
+}
+
+
+.left, .right {
+    height: 100vh;
+}
+
+.left {
+    position: relative;
+    flex: 1;
+    background-color: azure;
+    background-image: url(./images/left_side_background.jpeg);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.right{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 20px;
+
+    background-color: rgb(190, 158, 116);
+}
+
+#banner {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 100%;
+
+    font-family: 'NorseBold', sans-serif;
+    font-size: 60px;
+    color: white;
+
+
+    background-color: rgba(41, 26, 20, 0.76); 
+    padding: 10px 0px;
+    text-align: center;
+    
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+#banner img {
+    height: 2em;
+    margin: 10px;
+}
+
+.form {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(226, 206, 178);
+    gap: 10px;
+}
+
+.client_name, .contact_info, .password {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.item{
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+#myform{
+    
+}
+
+.random_text{
+    margin-left: 3%;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.right > div:first-child {
+    margin-bottom: 20px;
+}
+
+button{
+    align-self: flex-start;
+    padding: 10px 20px; 
+    background-color: rgb(206, 159, 93);
+    color: white;
+    border: none; 
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(109, 84, 49); 
+}
+
+@media only screen and (min-width: 700px) { 
+    
+}
